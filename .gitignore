@@ -1,0 +1,25 @@
+*.pyc
+__pycache__/
+venv/
+.env
+.DS_Store
+*.log
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dataset - No subir (muy pesado)
+datasets/
+creditcard.csv
+
+# Archivos temporales
+*.tmp
+*.bak
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python virtual environments
+env/
+ENV/

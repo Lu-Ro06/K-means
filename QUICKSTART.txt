@@ -1,0 +1,148 @@
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║   🛡️  SISTEMA DE DETECCIÓN DE FRAUDE BANCARIO - K-MEANS      ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+📁 ESTRUCTURA DEL PROYECTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+api-kmeans/
+├── 📄 app.py                    → Aplicación Flask principal
+├── 📄 requirements.txt          → Dependencias Python
+├── 📄 Procfile                  → Config para Render/Heroku
+├── 📄 runtime.txt               → Versión de Python
+├── 📄 render.yaml               → Configuración automática Render
+├── 📄 .gitignore                → Archivos a ignorar en Git
+├── 📄 README.md                 → Documentación principal
+├── 📄 DEPLOYMENT.md             → Guía detallada de deployment
+├── 📄 setup_git.sh              → Script automatizado para Git
+├── 📂 templates/
+│   └── index.html               → Página web principal
+└── 📂 datasets/
+    └── creditcard.csv           → Dataset de transacciones
+
+
+🚀 INICIO RÁPIDO - PRUEBA LOCAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣ Instalar dependencias:
+   pip install -r requirements.txt
+
+2️⃣ Ejecutar aplicación:
+   python app.py
+
+3️⃣ Abrir navegador:
+   http://localhost:5000
+
+
+🌐 DEPLOYMENT EN RENDER (RECOMENDADO)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PASO 1: Subir a GitHub
+   ./setup_git.sh
+   git remote add origin https://github.com/TU-USUARIO/TU-REPO.git
+   git branch -M main
+   git push -u origin main
+
+PASO 2: Deploy en Render
+   1. Ve a https://render.com
+   2. Conecta tu cuenta de GitHub
+   3. New → Blueprint
+   4. Selecciona tu repositorio
+   5. Render detectará automáticamente render.yaml
+   6. Click "Apply"
+   7. ¡Espera el deployment! (~5 min)
+
+
+📊 CARACTERÍSTICAS DE LA APLICACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Visualización de datos del dataset
+✅ Primeras filas y estadísticas básicas
+✅ Gráfico de dispersión (V10 vs V14)
+✅ Visualización de clusters K-means
+✅ Distribución de muestras por cluster
+✅ Métricas de evaluación:
+   • Purity Score
+   • Silhouette Score
+   • Calinski-Harabasz Score
+✅ Análisis detallado de cada cluster
+✅ Diseño moderno temático (detección de fraude)
+
+
+🎯 RESULTADOS DEL MODELO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Cluster 0: 109,253 muestras → 19 maliciosas (0.02%)
+Cluster 1: 124,538 muestras → 17 maliciosas (0.01%)
+Cluster 2:  30,408 muestras → 161 maliciosas (0.53%)
+Cluster 3:     308 muestras → 265 maliciosas (86.04%) ⚠️
+Cluster 4:  20,300 muestras → 30 maliciosas (0.15%)
+
+🚨 El Cluster 3 concentra el 86% de fraudes → Alta efectividad
+
+
+📝 NOTAS IMPORTANTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ Dataset altamente desbalanceado (492 fraudes / 284,315 normales)
+⚡ Características V1-V28 transformadas con PCA (privacidad)
+⚡ Random Forest selecciona las 7 características más importantes
+⚡ K-means agrupa en 5 clusters
+⚡ Primera carga en Render puede tardar ~5 minutos
+⚡ Plan gratuito de Render "duerme" después de 15 min sin uso
+
+
+🔧 SOLUCIÓN DE PROBLEMAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Error: ModuleNotFoundError
+   → pip install -r requirements.txt
+
+❌ Error: Dataset no encontrado
+   → Verificar que datasets/creditcard.csv existe
+
+❌ Render: Build failed
+   → Revisar logs en dashboard de Render
+   → Verificar runtime.txt y requirements.txt
+
+❌ App no responde en Render
+   → Esperar ~5 min (primera carga)
+   → Revisar logs para errores
+
+
+📚 DOCUMENTACIÓN ADICIONAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📖 README.md         → Información general del proyecto
+📖 DEPLOYMENT.md     → Guía paso a paso de deployment
+📖 setup_git.sh      → Script de automatización Git
+
+
+🎨 DISEÑO DE LA INTERFAZ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎨 Tema: Detección de fraude bancario
+🎨 Colores: Azul oscuro, rojo alerta, cian tecnológico
+🎨 No usa diseño típico de IA
+🎨 Responsive (móvil y desktop)
+🎨 Visualizaciones integradas en base64
+
+
+✨ TECNOLOGÍAS UTILIZADAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🐍 Python 3.11
+🌐 Flask 3.0
+📊 Scikit-learn (K-means, Random Forest, PCA)
+📈 Matplotlib & Seaborn
+🐼 Pandas & NumPy
+🚀 Gunicorn (servidor WSGI)
+
+
+═══════════════════════════════════════════════════════════════
+
+          ¡TODO LISTO PARA USAR Y DEPLOYAR! 🎉
+
+═══════════════════════════════════════════════════════════════
