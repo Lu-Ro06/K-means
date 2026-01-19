@@ -205,3 +205,4 @@ Desarrollado como proyecto de análisis de Machine Learning para detección de f
 ---
 
 **⚠️ Nota:** Este proyecto es solo para fines educativos y de demostración. No debe usarse en producción sin las debidas consideraciones de seguridad y validación.
+# K-means
